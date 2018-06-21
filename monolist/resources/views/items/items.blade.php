@@ -13,19 +13,13 @@
                             @else
                                 <p class="item-title">{{ $item->name }}</p>
                             @endif
-                        </div>
-                        <div class="panel-body">
-                            <p class="item-title"><a href="#">{{ $item->name }}</a></p>
                             <div class="buttons text-center">
-                                @include('items.have_button', ['item' => $item])
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <p class="item-title"><a href="#">{{ $item->name }}</a></p>
-                            <div class="buttons text-center">
+                            @if(Auth::check())
                                 @include('items.want_button', ['item' => $item])
                                  @include('items.have_button', ['item' => $item])
+                            @endif
                             </div>
+                         </div>
                     </div>
                 </div>
             </div>
